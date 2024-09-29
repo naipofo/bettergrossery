@@ -47,7 +47,7 @@ type ShoppingListProps = {
   listName: string;
 };
 
-export function ShoppingList({ listName }: ShoppingListProps) {
+function ShoppingList({ listName }: ShoppingListProps) {
   const { lists, addTask, addAnalysisResult } = useStore();
   const { healthLevel, allergies, suggestVegan } = useSettingsStore();
   const shoppingListData = lists.find((list) => list.id === listName);
@@ -427,7 +427,7 @@ type ListItemProps = {
   debugView?: boolean;
 };
 
-export function ListItem({ task, listId, debugView }: ListItemProps) {
+function ListItem({ task, listId, debugView }: ListItemProps) {
   const { removeTask, toggleTaskChecked, replaceItem, removeSuggestion } =
     useStore();
 
